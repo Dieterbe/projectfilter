@@ -14,5 +14,10 @@ Only git is supported, projects with other VCS'es are ignored (and not included)
 looks for any file matching the given glob expression.
 Useful to filter for file extensions or to check which repos are using a specific file.
 
-example:
-project-filter.py --debug --author 'D.*Plaetinck' --fname '*.java' /home/dieter/code
+examples:
+# list all java projects to which I committed.
+project-filter.py --author 'D.*Plaetinck' --fname '*.java' $HOME/code
+# list all projects that have a remote somewhere on archlinux.org:
+project-filter.py --remote archlinux\.org $HOME/code
+# list all projects that use a configure script:
+project-filter.py --fname 'configure' $HOME/code
