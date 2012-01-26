@@ -1,1 +1,18 @@
+= intro =
+Filter your programming projects (locally) on VCS and filetype information
 
+= usage =
+
+project-filter.py -h
+
+= included filters =
+== AuthorFilter ==
+looks if any commit is authored by a user matching the given regex.
+Only git is supported, projects with other VCS'es are ignored (and not included) if you use this filter!
+
+== FnameFilter ==
+looks for any file matching the given glob expression.
+Useful to filter for file extensions or to check which repos are using a specific file.
+
+example:
+project-filter.py --debug --author 'D.*Plaetinck' --fname '*.java' /home/dieter/code
